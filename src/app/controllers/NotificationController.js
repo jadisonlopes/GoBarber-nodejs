@@ -21,6 +21,15 @@ class NotificationController {
 
     return res.json(notificaitons);
   }
+
+  async update(req, res) {
+    const notifications = await Notification.findByIdAndUpdate(
+      req.params.id,
+      { read: true },
+      { new: true }
+    );
+    return res.json(notifications);
+  }
 }
 
 export default new NotificationController();
