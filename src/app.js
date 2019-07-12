@@ -15,7 +15,6 @@ class App {
   middlewares() {
     this.server.use(express.json());
 
-    // static: Permitindo exibir utilizar arquivos static.
     this.server.use(
       '/files',
       express.static(path.resolve(__dirname, '..', 'temp', 'uploads'))

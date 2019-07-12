@@ -4,7 +4,6 @@ import User from '../models/User';
 
 class UserController {
   async store(req, res) {
-    // Yup é uma biblioteca de validação de dados.
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string()
